@@ -2,30 +2,35 @@
 
 import java.util.Scanner;
 
+//esta classe não tem o metodo main
 public class senha {
-    public static void main(String[] args) {
+    // deste modo ele não executa nada, veja
+    // agora vou criar a classe testadora
+    public void ca() {
 
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Digite a senha");
         int senha = sc.nextInt();
-        if(senha==1234) {
+        if (senha == 1234) {
             System.out.println("a senha digitada está correta");
-        }
-        else{
-System.out.println("deseja tentar novamente?(S/N)");
-        char escolha = sc.next().charAt(0);
-        if (escolha == 'S') {
-            System.out.println("digite a senha novamente");
-            senha = sc.nextInt();
-            if (senha !=1234){
-            System.out.println("você errou a senha novamente."+"\n"+"programa encerrado");
+        } else {
+            System.out.println("deseja tentar novamente?(S/N)");
+            char escolha = sc.next().charAt(0);
+            char escolha1 = escolha;
+            char UpperCaseescolha1 = Character.toUpperCase(escolha1);
+
+            if (UpperCaseescolha1 == 'S') {
+                System.out.println("digite a senha novamente");
+                senha = sc.nextInt();
+                if (senha != 1234) {
+                    System.out.println("você errou a senha novamente." + "\n" + "programa encerrado");
+                } else {
+                    System.out.println("você acertou, bem-vindo");
+                }
+            } else {
+                System.out.println("programa encerrado");
             }
-            else{System.out.println("você acertou, bem-vindo");}
         }
-        else{}
-        
-            
-        } 
     }
 }
